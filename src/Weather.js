@@ -36,54 +36,60 @@ export default function Weather(props){
   }
   if (loaded){
     return (
-     
-<div className="container ">
-    <form onSubmit={handleSubmit}>
-   <input type="search" placeholder="Enter City" autoComplete="off" onChange={handleChange}/>
-   <input type="submit" value= "Search"/>
-   
-
-   </form>
-
-   <hr/>
-   <div className="grid grid-3-columns">
-        <div className="col-4">
-          <img
-            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
-            alt="rain-day"
-            id="icon"
-            width="150"
-            className="icon"
+      <div className="container ">
+        <form onSubmit={handleSubmit} className="text-center mt-1 mb-4">
+          <input
+            type="search"
+            placeholder="Enter City"
+            autoComplete="off"
+            onChange={handleChange}
           />
-
-          <p className="temperature-today">
-           
+          <input type="submit" value="Search" />
+        </form> 
+        <hr />
+<br/>
+       
+        <div className="row align-items-start ">
+          <div className="col-4 ">
             
-              <UnitsConversion temp={weather.temperature}/>
-            
-          </p>
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+              alt="rain-day"
+              id="icon"
+              width="130"
+              className="icon"
+            />
 
-          <p className="typeofday"><strong>{weather.description}</strong></p>
+            <p className="temperature-today">
+              <UnitsConversion temp={weather.temperature} />
+            </p>
+
+            <p className="typeofday">
+              <strong>{weather.description}</strong>
+            </p>
+          </div>
+          <div className="col-4">
+            <p className="update">Last Updated:</p>
+            <hr />
+            <p className="day-today">
+              <Time />
+            </p>
+            <hr />
+          </div>
+          <div className="col-4">
+            <p className="location">
+              <strong>{weather.entry}</strong>
+            </p>
+            <p className="humidity">
+              {" "}
+              Humidity: {weather.humidity}%
+              <br />
+              Wind:{Math.round(weather.wind)}km/h
+            </p>
+          </div>
         </div>
-     <div className="col-4">
-        <p className="update">Last Updated:</p>
-        <hr />
-        <p className="day-today">
-          <Time/>
-        </p>
-        <hr />
       </div>
-      <div className="col-4">
-        <p className="location">
-          <strong>{weather.entry}</strong>
-        </p>
-        <p className="humidity"> Humidity: {weather.humidity}%
-          <br />
-          Wind:{Math.round(weather.wind)}km/h
-        </p>
-      </div>
-     </div>  
-   </div> );
+    );
   } else {
     search();
     return "loading"; 

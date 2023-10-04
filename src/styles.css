@@ -1,34 +1,25 @@
 body {
   font-family: sans-serif;
-  padding: 20px;
-  max-width: 900px;
+    
+   
+}
+.weather{
   display: block;
   margin: 0 auto;
+  max-width: 750px;
 }
 .container {
-  width: 100%;
-  background-color: #ffb677;
-  border: 2px solid #57385c;
-  margin-top: 50px;
-  padding: 20px;
+  
+      width: 100%;
+    background-color: #ffb677;
+    border: 2px solid #57385c;
+    margin-top: 50px;
+    padding: 20px;
   border-radius: 10px;
+  display: block;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.grid{
-  display: grid;
-  justify-content: space-around;
-}
-.grid-3-columns{
-  grid-template-columns: 1fr 1fr 1fr;
- 
-}
-form{
-  display: block;
-  padding: 5px;
-  
-  margin-left: 250px;
-  
-}
+
 Input {
   background-color: #e8751a;
 
@@ -40,18 +31,21 @@ Input {
   border: 2px solid #57385c;
 }
 .icon {
+  margin-left: 50px;
+  margin-top: -40px;
   display: block;
-  margin: 0 auto;
+ margin: 0, auto;
   
 }
 .temperature-today {
-  font-size: 50px;
+  
+  font-size: 30px;
   text-align: center;
   color: #57385c;
   margin: 0;
 }
 .typeofday {
-  font-size: 25px;
+  font-size: 24px;
   color: #57385c;
   text-align: center;
   text-transform: capitalize;
@@ -59,7 +53,7 @@ Input {
 
 .celcius , .fahrenheit {
   position: relative;
-  font-size: 15px;
+  font-size: 12px;
   top: -20px;
   text-align: center;
   
@@ -67,7 +61,7 @@ Input {
 
 .update {
   font-size: 20px;
-  margin-top: 75px;
+  
   font-weight: bold;
   text-align: center;
   color: #57385c;
@@ -82,32 +76,29 @@ Input {
   margin-bottom: 0px;
 }
 .location {
-  padding: 15px;
-  font-size: 40px;
-  width: 70%;
+  padding: 10px;
+  font-size: 35px;
+  text-align: center;
   color: rgb(76, 48, 80);
   display: block;
   background-color: #e8751a;
   border: rgb(76, 48, 80) 2px solid;
-  border-radius: 45%;
-  margin-top: 60px;
-  margin-bottom: 25px;
-  margin-left: 38px;
+  border-radius: 6px;
+  margin-top: 10px;
+  
 }
 .humidity{
   margin-left: 24px;
-  margin-top: 35px;
+  margin-top: 25px;
   font-weight: bold;
 }
 p {
-  margin-top: 0px;
-  
   font-size: 20px;
   color: #57385c;
   text-align: center;
 }
 footer{
-  text-align: left;
+  text-align:center;
   padding: 10px;
   font-size: 15px;
 }

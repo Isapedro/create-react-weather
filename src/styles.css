@@ -1,0 +1,144 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  max-width: 900px;
+  display: block;
+  margin: 0 auto;
+}
+.container {
+  width: 100%;
+  background-color: #ffb677;
+  border: 2px solid #57385c;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.grid{
+  display: grid;
+  justify-content: space-around;
+}
+.grid-3-columns{
+  grid-template-columns: 1fr 1fr 1fr;
+ 
+}
+form{
+  display: block;
+  padding: 5px;
+  
+  margin-left: 250px;
+  
+}
+Input {
+  background-color: #e8751a;
+
+  color: #57385c;
+  padding: 10px 50px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 6px;
+  border: 2px solid #57385c;
+}
+.icon {
+  display: block;
+  margin: 0 auto;
+  
+}
+.temperature-today {
+  font-size: 50px;
+  text-align: center;
+  color: #57385c;
+  margin: 0;
+}
+.typeofday {
+  font-size: 25px;
+  color: #57385c;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.celcius , .fahrenheit {
+  position: relative;
+  font-size: 15px;
+  top: -20px;
+  text-align: center;
+  
+}
+
+.update {
+  font-size: 20px;
+  margin-top: 75px;
+  font-weight: bold;
+  text-align: center;
+  color: #57385c;
+  margin-left: -15px;
+}
+.day-today {
+  font-size: 30px;
+  font-weight: bolder;
+  color: #57385c;
+  text-align: center;
+  margin-left: -15px;
+  margin-bottom: 0px;
+}
+.location {
+  padding: 15px;
+  font-size: 40px;
+  width: 70%;
+  color: rgb(76, 48, 80);
+  display: block;
+  background-color: #e8751a;
+  border: rgb(76, 48, 80) 2px solid;
+  border-radius: 45%;
+  margin-top: 60px;
+  margin-bottom: 25px;
+  margin-left: 38px;
+}
+.humidity{
+  margin-left: 24px;
+  margin-top: 35px;
+  font-weight: bold;
+}
+p {
+  margin-top: 0px;
+  
+  font-size: 20px;
+  color: #57385c;
+  text-align: center;
+}
+.openSource{
+  text-align: left;
+  padding: 10px;
+  font-size: 15px;
+}
+
+@media (max-width: 800px) {
+  .icon {
+    width: 80px;
+  }
+  input {
+    padding: 5px 5px;
+    margin: 0;
+  }
+  .day-today {
+    font-size: 15px;
+  }
+  .typeofday {
+    font-size: 15px;
+  }
+  .temperature-today {
+    font-size: 15px;
+  }
+
+  .celcius , .fahrenheit {
+    font-size: 7px;
+  }
+  .location {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-size: 15px;
+  }
+  p {
+    font-size: 13px;
+  }
+}

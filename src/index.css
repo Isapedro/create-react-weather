@@ -1,0 +1,11 @@
+.weather{
+  display: block;
+  margin: 0 auto;
+  max-width: 750px;
+}
+
+.weather footer{
+  text-align:left;
+  padding: 15px;
+  font-size: 15px;
+}

@@ -42,16 +42,18 @@ export default function Weather(props){
             type="search"
             placeholder="Enter City"
             autoComplete="off"
+            autoFocus="on"
             onChange={handleChange}
+            className="col-6"
           />
-          <input type="submit" value="Search" />
-        </form> 
+          <input type="submit" value="Search" className="col-2" />
+          <input type="submit" value="Current Location" className="col-4" />
+        </form>
         <hr />
-<br/>
-       
+        <br />
+
         <div className="row align-items-start ">
           <div className="col-4 ">
-            
             <img
               src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
               alt="rain-day"

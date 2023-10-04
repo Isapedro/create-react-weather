@@ -8,11 +8,11 @@ root.render(
   <React.StrictMode>
     <div >
       <Weather defaultCity="Munich" />
-      <p className="openSource">
+      <footer>
         {" "}
-        <a href="https://github.com/Isapedro/create-react-weather/commit/d6138acc666e6035db69d3e682e0b6e9e0107b91" target="_blank" rel="noreferrer" className="github">Open-source</a> {""}
-        code by Anaisa Pedro
-      </p>
+        <a href="https://github.com/Isapedro/create-react-weather/commit/d6138acc666e6035db69d3e682e0b6e9e0107b91" target="_blank" rel="noreferrer" className="github">Open-sourced</a> {""}
+        coded by <a href="www.linkedin.com/in/isa-pedro92" target="_blank" rel="noreferrer">Anaisa Pedro</a>
+      </footer>
     </div>
   </React.StrictMode>
 );

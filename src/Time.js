@@ -1,5 +1,5 @@
-export default function Time() {
-  let currentTime = new Date();
+import React from "react";
+export default function Time(props) {
   let days = [
     "Sunday",
     "Monday",
@@ -9,16 +9,40 @@ export default function Time() {
     "Friday",
     "Saturday",
   ];
-  let day = days[currentTime.getDay()];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let day = days[props.date.getDay()];
 
-  let hours = currentTime.getHours();
-  let minutes = currentTime.getMinutes();
+  let date = props.date.getDate();
+  if (date < 10) {
+    date = `0${date}`;
+  }
+  let month = months[props.date.getMonth()];
 
+  let hours = props.date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
+  let minutes = props.date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  return `${day}, ${hours}:${minutes}`;
+
+  return (
+    <span>
+      {day} {month} {date} {hours}:{minutes}
+    </span>
+  );
 }

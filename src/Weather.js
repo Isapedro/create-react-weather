@@ -6,23 +6,23 @@ import "./styles.css";
 
 export default function Weather(props){
   let [city, setCity] = useState(props.defaultCity);
-  let [loaded, setLoaded] = useState(false);
-  let [weather, setWeather] = useState("");
+  let [weather, setWeather] = useState({ ready: false });
 
   function showWeather(response){
-    setLoaded(true);
     setWeather({
-      entry:response.data.name,
-      description:response.data.weather[0].description,
+      entry: response.data.name,
+      ready: true,
+      description: response.data.weather[0].description,
       temperature: response.data.main.temp,
-      humidity:response.data.main.humidity,
+      humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       icon: response.data.weather[0].icon,
-      coords:response.data.coord,
+      date: new Date(response.data.dt * 1000),
+      coords: response.data.coord,
     });
   }
   function search(){
-    let apiKey = "1a1cbe70f173d7353e1863e8e9d29275";
+    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(url).then(showWeather);
 
@@ -34,7 +34,7 @@ export default function Weather(props){
   function handleChange(event){
     setCity(event.target.value);
   }
-  if (loaded){
+  if (weather.ready) {
     return (
       <div className="container ">
         <form onSubmit={handleSubmit} className="text-center mt-1 mb-4">
@@ -74,7 +74,7 @@ export default function Weather(props){
             <p className="update">Last Updated:</p>
             <hr />
             <p className="day-today">
-              <Time />
+              <Time info={weather}/>
             </p>
             <hr />
           </div>
@@ -94,6 +94,6 @@ export default function Weather(props){
     );
   } else {
     search();
-    return "loading"; 
+    return "loading";
   }
   }

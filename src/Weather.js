@@ -1,19 +1,21 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import UnitsConversion from "./UnitsConversion";
-import WeatherIcon from"./WeatherIcon";
-import LoadingSpinner from "./LoadingSpinner"
+import WeatherIcon from "./WeatherIcon";
+import LoadingSpinner from "./LoadingSpinner";
+import WeatherForecast from "./WeatherForecast";
 import Time from "./Time";
 import axios from "axios";
 import "./styles.css";
 
-export default function Weather(props){
+export default function Weather(props) {
   let [city, setCity] = useState(props.defaultCity);
   let [weather, setWeather] = useState({ ready: false });
 
-  function showWeather(response){
+  function showWeather(response) {
     setWeather({
       entry: response.data.name,
       ready: true,
+      coordinates: response.data.coord,
       description: response.data.weather[0].description,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
@@ -23,17 +25,16 @@ export default function Weather(props){
       coords: response.data.coord,
     });
   }
-  function search(){
-    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  function search() {
+    let apiKey = "c5f0e59acac64258bb92ed027d20c68f";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(url).then(showWeather);
-
   }
-  function handleSubmit(event){
+  function handleSubmit(event) {
     event.preventDefault();
     search();
   }
-  function handleChange(event){
+  function handleChange(event) {
     setCity(event.target.value);
   }
   if (weather.ready) {
@@ -52,14 +53,12 @@ export default function Weather(props){
           <input type="submit" value="Current Location" className="col-4" />
         </form>
         <hr />
-        
 
         <div className="row align-items-start ">
           <div className="col-4 ">
             <div className="icon mb-2">
-            <WeatherIcon code={weather.icon}  />
-          
-</div>
+              <WeatherIcon code={weather.icon} size={100} />
+            </div>
             <p className="temperature-today">
               <UnitsConversion temp={weather.temperature} />
             </p>
@@ -72,7 +71,7 @@ export default function Weather(props){
             <p className="update">Last Updated:</p>
             <hr />
             <p className="day-today">
-              <Time date ={weather.date}/>
+              <Time date={weather.date} />
             </p>
             <hr />
           </div>
@@ -88,13 +87,15 @@ export default function Weather(props){
             </p>
           </div>
         </div>
+        <WeatherForecast coordinates={weather.coordinates} />
       </div>
     );
   } else {
     search();
     return (
       <div className="spinner">
-        <LoadingSpinner/>
-      </div>);
+        <LoadingSpinner />
+      </div>
+    );
   }
-  }
+}

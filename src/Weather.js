@@ -47,10 +47,10 @@ export default function Weather(props) {
             autoComplete="off"
             autoFocus="on"
             onChange={handleChange}
-            className="col-6"
+            className="col-8"
           />
-          <input type="submit" value="Search" className="col-2" />
-          <input type="submit" value="Current Location" className="col-4" />
+          <input type="submit" value="Search" className="col-4" />
+          
         </form>
         <hr />
 

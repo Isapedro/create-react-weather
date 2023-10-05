@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import UnitsConversion from "./UnitsConversion";
+import WeatherIcon from"./WeatherIcon";
 import Time from "./Time";
 import axios from "axios";
 import "./styles.css";
@@ -50,18 +51,14 @@ export default function Weather(props){
           <input type="submit" value="Current Location" className="col-4" />
         </form>
         <hr />
-        <br />
+        
 
         <div className="row align-items-start ">
           <div className="col-4 ">
-            <img
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
-              alt="rain-day"
-              id="icon"
-              width="130"
-              className="icon"
-            />
-
+            <div className="icon mb-2">
+            <WeatherIcon code={weather.icon}  />
+          
+</div>
             <p className="temperature-today">
               <UnitsConversion temp={weather.temperature} />
             </p>
@@ -74,7 +71,7 @@ export default function Weather(props){
             <p className="update">Last Updated:</p>
             <hr />
             <p className="day-today">
-              <Time info={weather}/>
+              <Time date ={weather.date}/>
             </p>
             <hr />
           </div>

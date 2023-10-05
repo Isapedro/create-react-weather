@@ -22,9 +22,9 @@ Input {
 }
 .icon {
   margin-left: 50px;
-  margin-top: -40px;
-  display: block;
-  margin: 0, auto;
+  padding: 5px;
+ 
+  
 }
 .temperature-today {
   font-size: 30px;

@@ -10,18 +10,18 @@ export default function Time(props) {
     "Saturday",
   ];
   let months = [
-    "January",
-    "February",
-    "March",
-    "April",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
     "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
   ];
   let day = days[props.date.getDay()];
 
@@ -42,7 +42,7 @@ export default function Time(props) {
 
   return (
     <span>
-      {day} {month} {date} {hours}:{minutes}
+      {day}, {date} {month} {hours}:{minutes}
     </span>
   );
 }

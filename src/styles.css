@@ -40,7 +40,7 @@ Input {
   text-transform: capitalize;
 }
 
-.celcius,
+.celsius,
 .fahrenheit {
   position: relative;
   font-size: 12px;

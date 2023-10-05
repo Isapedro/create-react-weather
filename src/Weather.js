@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import UnitsConversion from "./UnitsConversion";
 import WeatherIcon from"./WeatherIcon";
+import LoadingSpinner from "./LoadingSpinner"
 import Time from "./Time";
 import axios from "axios";
 import "./styles.css";
@@ -91,6 +92,9 @@ export default function Weather(props){
     );
   } else {
     search();
-    return "loading";
+    return (
+      <div className="spinner">
+        <LoadingSpinner/>
+      </div>);
   }
   }

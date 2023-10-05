@@ -20,7 +20,7 @@ Input {
   border-radius: 6px;
   border: 2px solid #57385c;
 }
-.icon {
+.icon canvas {
   margin-left: 50px;
   padding: 5px;
  
@@ -86,34 +86,39 @@ p {
   text-align: center;
 }
 
-@media (max-width: 800px) {
-  .icon {
-    width: 80px;
+@media (max-width: 700px) {
+  .icon canvas {
+    width: 40px;
+    display: block;
+    margin-left: 30px;
   }
   input {
     padding: 5px 5px;
     margin: 0;
   }
   .day-today {
-    font-size: 15px;
+    font-size: 10px;
   }
   .typeofday {
     font-size: 15px;
+    margin-top: 10px;
   }
   .temperature-today {
-    font-size: 15px;
+    font-size: 30px;
   }
 
-  .celcius,
-  .fahrenheit {
-    font-size: 7px;
+  .update{
+    font-size: 15px;
   }
   .location {
-    margin-top: 40px;
+    margin-top: 10px;
     margin-bottom: 15px;
     font-size: 15px;
   }
   p {
     font-size: 13px;
+  }
+  .WeatherForecast{
+    display: none;
   }
 }

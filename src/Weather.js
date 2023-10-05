@@ -47,7 +47,7 @@ export default function Weather(props) {
             autoComplete="off"
             autoFocus="on"
             onChange={handleChange}
-            className="col-8"
+            className="col-6"
           />
           <input type="submit" value="Search" className="col-4" />
           

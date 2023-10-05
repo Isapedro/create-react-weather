@@ -1,6 +1,6 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
-import axios from "axios";
+
 import "./weatherforecast.css";
 
 export default function WeatherForecastDay(props) {
@@ -24,10 +24,10 @@ export default function WeatherForecastDay(props) {
       <WeatherIcon code={props.data.weather[0].icon} size={35} />
       <div className="WeatherForecast-temperatures">
         <span className="WeatherForecast-temperature-max">
-          {maxTemperature()}º
+          {maxTemperature()}
         </span>
         <span className="WeatherForecast-temperature-min">
-          {minTemperature()}º
+          {minTemperature()}
         </span>
       </div>
     </div>

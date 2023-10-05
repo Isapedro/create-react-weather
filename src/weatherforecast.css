@@ -12,7 +12,7 @@ color: #57385c;
  font-weight: bold;
 }
 .WeatherForecast-temperature-max{
-  
+  margin-right: 5px;
 }
 .WeatherForecast-temperature-min{
   opacity: 0.7;
